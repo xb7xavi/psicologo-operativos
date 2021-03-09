@@ -72,6 +72,7 @@ int determinarPrioridad(char arreglo[20][15]){
     int prioridad;
     int frase = 0;
     int freno = 12;
+    int silabas = 0;
     /*Recorre el arreglo de lo introducido por consola*/
     while(strcmp(arreglo[contador], "\0")!= 0 ){
         /*Recorre los niveles de prioridades*/
@@ -82,13 +83,18 @@ int determinarPrioridad(char arreglo[20][15]){
             while(strcmp(nivelesPrioridades[prioridad][frase][0], "\0")!= 0){
                 /*Recorre la cantidad de palabras de una frase*/
                 /*printf("pa\n");*/
-                if(strcmp(nivelesPrioridades[prioridad][frase][0], arreglo[contador]) == 0){
+                while(strcmp(nivelesPrioridades[prioridad][frase][silabas], arreglo[contador + silabas]) == 0){
                     /*printf("pe\n");*/
-                    printf("bingo, palabra: %s, la prioridad es %d\n",nivelesPrioridades[prioridad][frase][0], prioridad +1);
-                    freno = prioridad;
-                    break;
+                    silabas ++;
+                    if(strcmp(nivelesPrioridades[prioridad][frase][silabas], "\0") == 0){
+
+                    	printf("bingo, palabra: %s, la prioridad es %d\n",nivelesPrioridades[prioridad][frase][0], prioridad +1);
+                    	freno = prioridad;
+               		    break;
+                    }
                 }
                 frase = frase +1;
+                silabas = 0;
             }
             frase = 0;
         }
@@ -112,7 +118,7 @@ int psicologo(int a){
         case 10: printf("Sientete en confianza y cuentame lo que quieras\n"); break;
         case 11: printf("Cuentame un poco más, suena muy interesante\n"); break;
         case 12: printf("Especifíca un poco más por favor\n"); break;
-        default: /*if(infoRecopilada){gemRandom()}else{preguntar()*/break;
+        default: printf("por favor sigueme contando \n"); /*if(infoRecopilada){gemRandom()}else{preguntar()*/break;
     }
     return a;
 };
