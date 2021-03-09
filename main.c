@@ -2,16 +2,8 @@
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
-#include 'arreglos.c'
-#include 'main.h'
+#include "arreglos.h"
 
-int determinarPrioridad(char arreglo[20][15]);
-
-int psicologo(int);
-
-void preguntar();
-
-void gemRandom();
 
 
 int main(){
@@ -29,8 +21,7 @@ int main(){
             token = strtok(NULL, s);
             i = i+1;
         }
-        if(psicologo(determinarPrioridad(palabras)) == 1);
-            return 0;
+        if(psicologo(determinarPrioridad(palabras)) == 1){return 0;}
     }
 }
 
