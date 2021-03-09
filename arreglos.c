@@ -53,3 +53,15 @@ hobby?"};
 //Arreglo que contiene las preguntas para recolectar información
 char preguntas[2][20] = {"¿Cómo te llamas?","¿De dónde eres?"};
 */
+
+typedef struct{
+    char nombre[20];
+    char lugar_origen[32];
+    char relacion[12];
+}Persona;
+
+Persona *personas;
+
+if(""){
+	personas = malloc(sizeof(Persona));
+}
