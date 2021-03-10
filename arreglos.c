@@ -45,7 +45,7 @@ char nivelesPrioridades[12][40][6][20] = {
 };
 
 
-char frasesRandom[4][50] = {"Que_tienesenlacabezaenestemomento", "Quehashechorecientemente","Cuentamesobretusterapeutasanteriores", "Tienesalgunhobby"};
+char frasesRandom[4][50] = {"Que tienes en la cabeza en este momento", "Que has hecho recientemente","Cuentame sobre tus terapeutas anteriores", "Tienes algun hobby"};
 
 
 /*Arreglo que contiene las preguntas para recolectar información

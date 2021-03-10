@@ -8,7 +8,6 @@
 
 int main(){
 
-    gemRandom();
     printf("Hola, soy ELIZA, tu psicoterapeuta. ¿Hay algo que te esté perturbando?\n");
     while(0 == 0){
         char buffer[256];
