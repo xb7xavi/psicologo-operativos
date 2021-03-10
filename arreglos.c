@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 /*Arreglo que contiene los niveles de prioridades*/
 char nivelesPrioridades[12][40][6][20] = {
 {{"adios"},{"chao"},{"me","voy"},{"hora","de","irse"},{"hora","de","irme"},
@@ -44,14 +45,10 @@ char nivelesPrioridades[12][40][6][20] = {
 };
 
 
-/*
-Arreglo que contiene las respuestas random
-char frasesRandom[4][50] = {"¿Qué tienes en la cabeza en este momento?","¿Qué
-has hecho recientemente?","Cuéntame sobre tus terapeutas anteriores","¿Tienes algún
-hobby?"};
+char frasesRandom[4][50] = {"Que_tienesenlacabezaenestemomento", "Quehashechorecientemente","Cuentamesobretusterapeutasanteriores", "Tienesalgunhobby"};
 
 
-Arreglo que contiene las preguntas para recolectar información
+/*Arreglo que contiene las preguntas para recolectar información
 char preguntas[2][20] = {"¿Cómo te llamas?","¿De dónde eres?"};
 */
 
@@ -104,6 +101,11 @@ int determinarPrioridad(char arreglo[20][15]){
     return freno +1;
 };
 
+void gemRandom(){
+    srand(time(NULL));
+    printf("%s\n", frasesRandom[rand() % 4]);
+}
+
 int psicologo(int a){
     switch(a){
         case 1: printf("Fue todo un placer hablar contigo, aquí estaré para ti\n"); break;
@@ -118,7 +120,18 @@ int psicologo(int a){
         case 10: printf("Sientete en confianza y cuentame lo que quieras\n"); break;
         case 11: printf("Cuentame un poco más, suena muy interesante\n"); break;
         case 12: printf("Especifíca un poco más por favor\n"); break;
-        default: printf("por favor sigueme contando \n"); /*if(infoRecopilada){gemRandom()}else{preguntar()*/break;
+        default: gemRandom(); /*if(infoRecopilada){gemRandom()}else{preguntar()*/break;
     }
     return a;
 };
+
+
+
+
+/*void preguntar(){
+    if(persona.nombre == empty)
+        printf("%s\n", preguntas[0]);
+    if(persona.lugar == empty)
+        printf("%s\n", preguntas[1]);
+}*/
+
